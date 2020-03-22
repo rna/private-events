@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'Registered Successfully!!!'
+      log_in @user
       render 'show'
     else
       flash[:danger] = 'Invalid entries found'
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: session[:user_id])
   end
 
   private
