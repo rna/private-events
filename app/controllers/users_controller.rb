@@ -6,10 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Registered Successfully!!!"
+      flash[:success] = 'Registered Successfully!!!'
       render 'show'
     else
-      flash[:danger] = "Invalid entries found"
+      flash[:danger] = 'Invalid entries found'
       render 'new'
     end
   end
@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :email)
-    end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
 end
