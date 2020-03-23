@@ -1,2 +1,10 @@
-<p>Welcome <%= @user.name %>,</p>
+<p>Welcome <%= @user.name %></p>
 <%= @user.email %>
+
+<h2>List of your posts</h2>
+
+<ul> 
+  <% @events.each do |event| %>
+    <li><%= event.title %></li>
+  <% end %>
+</ul>
