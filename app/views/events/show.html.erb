@@ -3,3 +3,11 @@
 <%= @event.title %>
 
 <p>Creator: <%= @event.creator.name %></p>
+
+<h2>List of Attendees for this event:</h2>
+
+<ul>
+  <% @event.attendances.collect do |a| %>
+    <li><%= a.attendee.name %></li>
+  <% end %>
+</ul>
