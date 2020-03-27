@@ -1,13 +1,15 @@
 <p>Welcome <%= @user.name %></p>
 <%= @user.email %>
 
-<% if @events.nil? %>
+<% if !@events.nil? %>
   <h2>List of your posts</h2>
   <ul> 
     <% @events.each do |event| %>
       <li><%= event.title %></li>
     <% end %>
+    
   </ul>
+  <%= link_to "Create a New event", new_event_path %>
 <% else %>
-  <%= link_to "Create a New event", url:'events/new' %>
+  <%= link_to "Create a New event", new_event_path %>
 <% end %>

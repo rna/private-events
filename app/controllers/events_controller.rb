@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @event = @user.events.build(user_params)
     if @event.save
-      flash[:success] = "Event created successfully"
+      flash.now[:success] = "Event created successfully"
       render 'show'
     else
       flash.now[:danger] = "Invalid Event"
