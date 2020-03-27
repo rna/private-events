@@ -7,9 +7,15 @@
     <% @events.each do |event| %>
       <li><%= event.title %></li>
     <% end %>
-    
   </ul>
   <%= link_to "Create a New event", new_event_path %>
 <% else %>
   <%= link_to "Create a New event", new_event_path %>
 <% end %>
+
+<h2>Events you planned to attend:</h2>
+<ul>
+  <% @user.attendances.collect do |a|  %>
+    <li><%= a.attended_event.title %></li>
+  <% end %>
+</ul>
