@@ -1,7 +1,5 @@
-<p>Welcome <%= @user.name %></p>
-<%= @user.email %>
 
-<% if !@events.nil? %>
+<% if @events %>
   <h2>List of your posts</h2>
   <ul> 
     <% @events.each do |event| %>
@@ -15,7 +13,10 @@
 
 <h2>Events you planned to attend:</h2>
 <ul>
-  <% @user.attendances.collect do |a|  %>
+  <% @current_user.attendances.collect do |a|  %>
     <li><%= a.attended_event.title %></li>
   <% end %>
 </ul>
+
+<h2>Upcoming</h2>
+<%= @upcoming_events %>

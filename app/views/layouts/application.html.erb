@@ -10,6 +10,14 @@
   </head>
 
   <body>
+
+    <header>
+      <% if logged_in? %>
+        <p>Welcome <%= @current_user.name%> <%= link_to 'Logout', signout_path, method: 'delete' %>
+        </p>
+      <% end %>
+    </header>
+
     <% flash.each do |type, msg|  %>
       <div class="alert-<%= type %>"><%= msg %></div> 
     <% end %>
