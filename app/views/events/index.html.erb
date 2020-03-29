@@ -1,7 +1,15 @@
-<h1>List of all events</h1>
+<h1>List of upcoming events</h1>
 
 <ul>
-  <% @events.each do |event| %>
+  <% @upcoming_events.each do |event| %>
+    <li> <%= event.title %> Date: <%= event.date %></li>
+  <% end %>
+</ul>
+
+<h1>List of past events</h1>
+
+<ul>
+  <% @past_events.each do |event| %>
     <li> <%= event.title %> Date: <%= event.date %></li>
   <% end %>
 </ul>

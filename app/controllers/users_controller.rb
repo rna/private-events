@@ -20,10 +20,6 @@ class UsersController < ApplicationController
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  def upcoming_events
-    @upcoming_events = @current_user.upcoming_events
-  end
-
   def show
     if current_user.nil?
       flash[:danger] = 'You need to Signin'

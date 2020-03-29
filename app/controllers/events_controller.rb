@@ -1,19 +1,18 @@
 class EventsController < ApplicationController
+  before_action :find_current_user
 
   def index
-    @events = Event.all
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
   end
 
   def new
-    @user = current_user
     @event = @user.events.build
   end
 
   def create
-    @user = current_user
     @event = @user.events.build(user_params)
     if @event.save
-      @event.update_attribute(:date,Date.today)
       flash.now[:success] = "Event created successfully"
       render 'show'
     else
@@ -27,8 +26,11 @@ class EventsController < ApplicationController
   end
 
   private
+    def find_current_user
+      @user = current_user
+    end
 
     def user_params
-      params.require(:event).permit(:title, :description)
+      params.require(:event).permit(:title, :description, :date)
     end
 end
