@@ -26,6 +26,8 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       @events = User.find(current_user.id).events
+      @upcoming_events = @current_user.attended_events.upcoming
+      @prev_events = @current_user.attended_events.past
     end
   end
 

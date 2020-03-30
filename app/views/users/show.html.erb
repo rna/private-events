@@ -12,11 +12,16 @@
 <% end %>
 
 <h2>Events you planned to attend:</h2>
+<h3>Upcoming events</h3>
 <ul>
-  <% @current_user.attendances.collect do |a|  %>
-    <li><%= a.attended_event.title %></li>
+  <% @upcoming_events.each do |a|  %>
+    <li><%= a.title %></li>
   <% end %>
 </ul>
 
-<h2>Upcoming</h2>
-<%= @upcoming_events %>
+<h3>Past events</h3>
+<ul>
+  <% @prev_events.each do |a|  %>
+    <li><%= a.title %></li>
+  <% end %>
+</ul>
