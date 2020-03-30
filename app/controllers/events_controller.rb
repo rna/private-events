@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :find_current_user
+  before_action :signed_in_user
 
   def index
     @past_events = Event.past.all
@@ -26,11 +26,16 @@ class EventsController < ApplicationController
   end
 
   private
-    def find_current_user
-      @user = current_user
-    end
 
     def user_params
       params.require(:event).permit(:title, :description, :date)
+    end
+
+    def signed_in_user
+        @user = current_user
+        if @user.nil?
+          flash[:danger] = 'You need to signin'
+          redirect_to root_url
+        end
     end
 end
