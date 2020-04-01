@@ -18,9 +18,9 @@ module SessionsHelper
 
   def signed_in_user
     @user = current_user
-    if @user.nil?
-      flash[:danger] = 'You need to signin'
-      redirect_to root_url
-    end
+    return unless @user.nil?
+
+    flash[:danger] = 'You need to signin'
+    redirect_to root_url
   end
 end
