@@ -13,10 +13,10 @@ class EventsController < ApplicationController
   def create
     @event = @user.events.build(user_params)
     if @event.save
-      flash.now[:success] = "Event created successfully"
+      flash.now[:success] = 'Event created successfully'
       render 'show'
     else
-      flash.now[:danger] = "Invalid Event entry"
+      flash.now[:danger] = 'Invalid Event entry'
       render 'new'
     end
   end
@@ -27,8 +27,7 @@ class EventsController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:event).permit(:title, :description, :date)
-    end
-
+  def user_params
+    params.require(:event).permit(:title, :description, :date)
+  end
 end
