@@ -3,7 +3,7 @@
   <h2>List of your posts</h2>
   <ul> 
     <% @events.each do |event| %>
-      <li><%= event.title %></li>
+      <li><%= event.title %> <%= button_to "Send Invitations", new_invitation_path, method: 'get', params: {event_id:event.id} %></li>
     <% end %>
   </ul>
   <%= link_to "Create a New event", new_event_path %>

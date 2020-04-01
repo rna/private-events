@@ -31,11 +31,4 @@ class EventsController < ApplicationController
       params.require(:event).permit(:title, :description, :date)
     end
 
-    def signed_in_user
-        @user = current_user
-        if @user.nil?
-          flash[:danger] = 'You need to signin'
-          redirect_to root_url
-        end
-    end
 end

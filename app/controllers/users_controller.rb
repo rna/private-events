@@ -6,10 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash.now[:success] = 'Registered Successfully!!!'
-      log_in @user
-      @current_user = @user
-      render 'show'
+      flash[:success] = 'Registered Successfully!!!'
+      redirect_to root_url
     else
       flash[:danger] = 'Invalid entries found'
       render 'new'
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
       flash[:danger] = 'You need to Signin'
       redirect_to root_url
     else
-      @events = User.find(current_user.id).events
+      @events = User.find(@current_user.id).events
       @upcoming_events = @current_user.attended_events.upcoming
       @prev_events = @current_user.attended_events.past
     end

@@ -1,0 +1,7 @@
+<h1>Send Invitations</h1>
+
+<% @users.each do |user| %>
+<ul>
+  <li><%= user.name %><%= button_to 'Invite', {controller:'invitations', action: 'create'}, params:{attendee_id:user.id, event_id:@event.id}, method:'post' %></li>
+</ul>
+<% end %>

@@ -21,12 +21,14 @@
           <%# <li></li> %>
         </ul>
       <% end %>
-
+  
     </header>
 
     <% flash.each do |type, msg|  %>
       <div class="alert-<%= type %>"><%= msg %></div> 
     <% end %>
     <%= yield %>
+
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
