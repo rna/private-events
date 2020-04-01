@@ -1,0 +1,12 @@
+<header>
+  <% if logged_in? %>
+    <ul>
+      <li>Welcome <%= @current_user.name%>, </li>
+      
+      <li><%= link_to 'Home', events_path %></li>
+      <li><%= link_to 'Profile', user_path(@current_user) %></li>
+
+      <li><%= link_to 'Signout', signout_path, method: 'delete' %></li>
+    </ul>
+  <% end %>
+</header>

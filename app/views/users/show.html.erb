@@ -1,3 +1,4 @@
+<div class="event-show">
 
 <% if @events %>
   <h2>List of your posts</h2>
@@ -11,17 +12,24 @@
   <%= link_to "Create a New event", new_event_path %>
 <% end %>
 
-<h2>Events you planned to attend:</h2>
-<h3>Upcoming events</h3>
-<ul>
-  <% @upcoming_events.each do |a|  %>
-    <li><%= a.title %></li>
-  <% end %>
-</ul>
+<% if @upcoming_events.empty? && @prev_events.empty? %>
+  <h3>Sorry, you dont have any Invitations to attend </h3>
+<% else %>
 
-<h3>Past events</h3>
-<ul>
-  <% @prev_events.each do |a|  %>
-    <li><%= a.title %></li>
-  <% end %>
-</ul>
+  <h2>Events you planned to attend:</h2>
+  <h3>Upcoming events</h3>
+  <ul>
+    <% @upcoming_events.each do |a|  %>
+      <li><%= a.title %></li>
+    <% end %>
+  </ul>
+
+  <h3>Past events</h3>
+  <ul>
+    <% @prev_events.each do |a|  %>
+      <li><%= a.title %></li>
+    <% end %>
+  </ul>
+  
+<% end %>
+</div>

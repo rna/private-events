@@ -11,24 +11,11 @@
 
   <body>
 
-    <header>
-      <% if logged_in? %>
-        <ul>
-          <li>Welcome <%= @current_user.name%></li>
-          <li><%= link_to 'Signout', signout_path, method: 'delete' %></li>
-          <li><%= link_to 'Home', events_path %></li>
-          <li><%= link_to 'Profile', user_path(@current_user) %></li>
-          <%# <li></li> %>
-        </ul>
-      <% end %>
-  
-    </header>
-
-    <% flash.each do |type, msg|  %>
-      <div class="alert-<%= type %>"><%= msg %></div> 
-    <% end %>
+    <%= render 'layouts/header'  %>
+    
+    <%= render 'layouts/flash'  %>
+    
     <%= yield %>
 
-    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
