@@ -1,15 +1,7 @@
 <h1>List of upcoming events</h1>
 
-<ul>
-  <% @upcoming_events.each do |event| %>
-    <li> <%= event.title %> Date: <%= event.date %></li>
-  <% end %>
-</ul>
+<%= render partial:'shared/event_list', locals:{events:@upcoming_events}%>
 
 <h1>List of past events</h1>
 
-<ul>
-  <% @past_events.each do |event| %>
-    <li> <%= event.title %> Date: <%= event.date %></li>
-  <% end %>
-</ul>
+<%= render partial:'shared/event_list', locals:{events:@past_events}%>

@@ -9,6 +9,7 @@ header {
   background-color: gray;
   height: 50px;
   padding: 10px 0;
+  color: white;
   ul {
     list-style: none;
     display: flex;
@@ -53,4 +54,21 @@ header {
   border: 1px solid grey;
   text-align: center;
   padding-bottom: 20px;
+}
+main {
+  ul {
+    width: 20%;
+    list-style-type: none;
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+      padding: 10px 10px;
+      background: grey;
+    }
+
+    li:nth-child(odd) {
+      background: lightgrey;
+    }
+  }
 }
