@@ -4,7 +4,7 @@
 
 <p>Organised by:<b> <%= @event.creator.name %> </b></p>
 
-<% if !@event.attendances.collect %>
+<% if !@event.attendances.collect.any? %>
 
   <h4>There are no attendees yet, How about inviting others here in the club?</h4>
   
