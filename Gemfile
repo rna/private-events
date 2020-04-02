@@ -31,6 +31,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara', '>= 2.5'
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -44,9 +48,11 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'database_cleaner', '~> 1.5'
+  gem 'faker', '~> 1.6.1'
+  gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'webdrivers'
 end
 
