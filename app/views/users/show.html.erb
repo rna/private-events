@@ -1,0 +1,32 @@
+<div class="event-show">
+
+<% if !@events.empty? %>
+  <h2>List of your posts</h2>
+  <ul> 
+    <% @events.each do |event| %>
+      <li><%= event.title %> <%= button_to "Send Invitations", new_invitation_path, method: 'get', params: {event_id:event.id} %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Create a New event", new_event_path %>
+<% else %>
+
+  <h3>Heyyy, Why don't you create a new event??? </h3>
+  <%= link_to "Create a New event", new_event_path %>
+<% end %>
+
+<% if @upcoming_events.empty? && @past_events.empty? %>
+  <h3>Sorry, you dont have any Invitations to attend </h3>
+<% else %>
+
+  <h2>Events you planned to attend:</h2>
+ 
+  <h3>Upcoming events</h3>
+  
+  <%= render 'shared/event_list', events:@upcoming_events%>
+
+  <h3>Past events</h3>
+  
+  <%= render 'shared/event_list', events:@past_events%>
+  
+<% end %>
+</div>

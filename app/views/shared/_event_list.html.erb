@@ -1,0 +1,5 @@
+  <ul>
+    <% events.each do |a|  %>
+      <li><%= link_to a.title, event_path(a.id), method:'get' %></li>
+    <% end %>
+  </ul>

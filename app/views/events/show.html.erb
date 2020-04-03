@@ -1,0 +1,20 @@
+<h1>Events show</h1>
+
+<%= @event.title %>
+
+<p>Organised by:<b> <%= @event.creator.name %> </b></p>
+
+<% if !@event.attendances.collect.any? %>
+
+  <h4>There are no attendees yet, How about inviting others here in the club?</h4>
+  
+  <%= button_to "Send Invitations", new_invitation_path, method: 'get', params: {event_id:@event.id} %>
+<% else %>
+<h2>List of Attendees for this event:</h2>
+
+  <ul>
+  <% @event.attendances.collect do |a| %>
+    <li><%= a.attendee.name %></li>
+  <% end %>
+<% end %>
+</ul>
