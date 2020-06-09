@@ -35,6 +35,13 @@ Building Private Events where members can create the events and invite the other
 ## About The Project
 This project is intend to allows users to create events and then manage user signups. Users can create events and send invitations and parties. The goal of this project is to apply advanced associations between the tables of schema.
 
+## Screenshot
+### Profile Page
+![Profile page](https://i.imgur.com/khE0iA7.png)
+
+### Index Page
+![Index page](https://i.imgur.com/gcVp0XJ.png)
+
 ## Built With
 
 - [Ruby](https://www.ruby-lang.org)
