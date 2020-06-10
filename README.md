@@ -29,6 +29,7 @@ Building Private Events where members can create the events and invite the other
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Run Tests](#run-tests)
 - [Authors](#authors)
 <!-- - [Acknowledgements](#acknowledgements) -->
 
@@ -58,37 +59,57 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-* Windows
+- Windows
+
 ```sh
 https://www.ruby-lang.org/es/documentation/installation/#rubyinstaller
 https://gorails.com/setup/windows/10
 ```
-* Ubuntu 18.04
+
+- Ubuntu 18.04
+
 ```sh
 sudo apt-get install ruby-full
-gem install rails -v 6.0.2.2,
+gem install rails -v 6.0.2.2
 ```
 <!-- ### Setup -->
 
 ### Installation
-Clone the repo, install the gems & migrate databse. Follow the steps as below.
+
+Clone the repo with:
 
 ```sh
 git clone https://github.com/rna/private-events
+```
 
+Instal gems with:
+
+```sh
 bundle install
+```
 
-rails db:migrate
+Setup database with:
+
+```sh
+   rails db:create
+   rails db:migrate
 ```
 
 ### Usage
-In order to run the app after installation, then run the following command in the teminal
+
+Start server with:
+
 ```sh
-rails server
+    rails server
 ```
 
-<!-- ### Run tests -->
+Open `http://localhost:3000/` in your browser.
 
+### Run tests
+
+```sh
+    rpsec --format documentation
+```
 <!-- ### Deployment -->
 
 
