@@ -51,7 +51,7 @@ This project is intend to allows users to create events and then manage user sig
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://private-events-site.herokuapp.com/)
 
 ## Getting Started
 
