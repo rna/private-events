@@ -30,13 +30,13 @@ Building Private Events where members can create the events and invite the other
   * [Installation](#installation)
   * [Usage](#usage)
   * [Run Tests](#run-tests)
+- [Roadmap](#roadmap)
 - [Authors](#authors)
 <!-- - [Acknowledgements](#acknowledgements) -->
 
 ## About The Project
 This project is intend to allows users to create events and then manage user signups. Users can create events and send invitations and parties. The goal of this project is to apply advanced associations between the tables of schema.
 
-## Screenshot
 ### Profile Page
 ![Profile page](https://i.imgur.com/khE0iA7.png)
 
@@ -110,8 +110,15 @@ Open `http://localhost:3000/` in your browser.
 ```sh
     rpsec --format documentation
 ```
-<!-- ### Deployment -->
 
+## Roadmap
+- [ ] Improve User Interface(UI) and User experience (UX) 
+- [ ] Option to create Public and Private events
+- [ ] Display of public events in the Homepage
+- [ ] Email confirmations for Event creation and invitations.
+- [ ] Integrating Social login
+
+<!-- ### Deployment -->
 
 ### Author
 
