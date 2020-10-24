@@ -1,0 +1,74 @@
+html,body{
+  width:100%;
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+
+header {  
+  background-color: gray;
+  height: 50px;
+  padding: 10px 0;
+  color: white;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    
+    li {
+      padding-right: 10px;
+    }
+  }
+  
+}
+
+.alert {
+  height: 30px;
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 3%;
+}
+
+.alert-success {
+  background-color: green;
+  color: white;
+}
+
+.alert-danger {
+  background-color:red;
+  color: white;
+}
+
+.login-form {
+  margin: 30px auto;
+  width:20%;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.register-form {
+  margin: 30px auto;
+  width:40%;
+  border: 1px solid grey;
+  text-align: center;
+  padding-bottom: 20px;
+}
+main {
+  ul {
+    width: 20%;
+    list-style-type: none;
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+      padding: 10px 10px;
+      background: grey;
+    }
+
+    li:nth-child(odd) {
+      background: lightgrey;
+    }
+  }
+}
